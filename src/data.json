@@ -1,107 +1,132 @@
 [
-    {
+    {   "id" : "1",
         "name" : "Cabbage salad",
         "price" : "120",
         "rating" : "4.1",
-        "like" : null,
-        "cateogry": "healthy,veg",
-        "img" : "/images/cabbage_salad.jpg"
+        "like" : false,
+        "cateogry": "veg",
+        "img" : "/images/cabbage_salad.jpg",
+        "qty":1
     },
-    {
+    {    
+        "id" : "2",  
         "name" : "Burger-veg",
         "price" : "120",
         "rating" : "3.9",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/burger_veg.webp"
+        "img" : "/images/burger_veg.webp",
+        "qty":1
     },
-    {
+    {   
+        "id" : "3",
         "name" : "Chowmein",
         "price" : "150",
         "rating" : "4.4",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/chowmein.jpg"
+        "img" : "/images/chowmein.jpg",
+        "qty":1
     },
-    {
+    {   
+        "id" : "4",
         "name" : "Seafood soup",
         "price" : "320",
         "rating" : "4.6",
-        "like" : null,
+        "like" : false,
         "cateogry": "non-veg",
-        "img" : "/images/Seafood_soup.webp"
+        "img" : "/images/Seafood_soup.webp",
+        "qty":1
     },
-    {
+    {   
+        "id" : "5",
         "name" : "Chicken soup",
         "price" : "290",
         "rating" : "3.2",
         "like" : true,
         "cateogry": "non-veg",
-        "img" : "/images/Chicken_soup.jpg"
+        "img" : "/images/Chicken_soup.jpg",
+        "qty":1
     },
-    {
+    {   
+        "id" : "6",
         "name" : "Pizza",
         "price" : "310",
         "rating" : "4.0",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/pizza.webp"
+        "img" : "/images/pizza.webp",
+        "qty":1
     },
-    {
+    {   
+        "id" : "7",
         "name" : "Biryani",
         "price" : "200",
         "rating" : "4.5",
         "like" : true,
         "cateogry": "non-veg",
-        "img" : "/images/biryani.jpg"
+        "img" : "/images/biryani.jpg",
+        "qty":1
     },
-    {
+    {   
+        "id" : "8",
         "name" : "Bean soup",
         "price" : "170",
         "rating" : "4.9",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/Bean_soup.webp"
+        "img" : "/images/Bean_soup.webp",
+        "qty":1
     },
-    {
+    {   
+        "id" : "9",
         "name" : "Burger-non veg",
         "price" : "260",
         "rating" : "3.4",
-        "like" : null,
+        "like" : false,
         "cateogry": "non-veg",
-        "img" : "/images/Burger_nonveg.webp"
+        "img" : "/images/Burger_nonveg.jpg",
+        "qty": 1
     },
-    {
+    {   
+        "id" : "10",
         "name" : "vegetable mix",
         "price" : "90",
         "rating" : "4.1",
         "like" : true,
-        "cateogry": "healthy,veg",
-        "img" : "/images/vegetable_mix.jpg"
+        "cateogry": "veg",
+        "img" : "/images/vegetable_mix.jpg",
+        "qty":1
     },
-    {
+    {   
+        "id" : "11",
         "name" : "Maggie",
         "price" : "120",
         "rating" : "3.9",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/maggie.png"
+        "img" : "/images/maggie.png",
+        "qty":1
     },
-    {
+    {   
+        "id" : "12",
         "name" : "Noodle salad",
         "price" : "160",
         "rating" : "4.4",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/Noodle_salad.jpg"
+        "img" : "/images/Noodle_salad.jpg",
+        "qty":1
     },
-    {
+    {   
+        "id" : "13",
         "name" : "Donut - 4pcs",
         "price" : "120",
         "rating" : "4.6",
-        "like" : null,
+        "like" : false,
         "cateogry": "veg",
-        "img" : "/images/donut.jpg"
+        "img" : "/images/donut.jpg",
+        "qty":1
     }
 ]
 
