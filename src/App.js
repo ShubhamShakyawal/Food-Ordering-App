@@ -1,5 +1,4 @@
-import './App.css';
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './components/Home';
 import Menu from './components/Menu';
@@ -10,6 +9,16 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 function App() {
   const [totalItems, setTotalItems] = useState(require('./data.json'));
   const [cartItems, setCartItems] = useState([]);
+  const [totalBill, setTotalBill] = useState(0);
+  useEffect(() => {
+    let i = 0;
+    cartItems.forEach((element) => {
+      i += element.price * element.qty;
+    });
+    setTotalBill(i);
+    // return () => {
+    // }
+    }, [cartItems]);
 
   function addToCart(id){
     // console.log('addToCart Function Called');
@@ -83,11 +92,19 @@ function App() {
                                                         handleIncreaseQuantity={handleIncreaseQuantity} 
                                                         handleDecreaseQuantity={handleDecreaseQuantity}
                                                         handleToggleLike={handleToggleLike}
+                                                        totalBill={totalBill}
                                                       />}/>
-                <Route exact path='/checkout' element={<Checkout/>}/>
+                <Route exact path='/checkout' element={<Checkout
+                                                          cartItems={cartItems} 
+                                                          removeFromCart={removeFromCart} 
+                                                          handleIncreaseQuantity={handleIncreaseQuantity} 
+                                                          handleDecreaseQuantity={handleDecreaseQuantity}
+                                                          totalBill={totalBill}
+                                                        />}/>
             </Routes>
           </Fragment>
       </Router>
+      
     </div>
                 </DndProvider>
   );

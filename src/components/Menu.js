@@ -1,24 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import FoodCard from "./FoodCard";
 import Orders from "./Orders";
 import { useDrop } from "react-dnd";
+import { Link } from "react-router-dom";
 
-const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQuantity,handleDecreaseQuantity, handleToggleLike }) => {
+const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQuantity,handleDecreaseQuantity, handleToggleLike , totalBill}) => {
     // const [myOrders, setMyOrders] = useState();
-    const [totalBill, setTotalBill] = useState(0);
+    
     // const [totalItemsLeft, setTotalItemLeft] = useState([]);
     const [category,setCategory] = useState('all');
     const uniqueCategories = ['all','veg','non-veg'];
-    useEffect(() => {
-    let i = 0;
-    cartItems.forEach((element) => {
-      i += element.price * element.qty;
-    });
-    setTotalBill(i);
-    // return () => {
-    // }
-    }, [cartItems]);
+    
 
     // const element;
     // const [isOver, drop] = useDrop(() => ({
@@ -145,7 +138,11 @@ const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQ
                     <span>₹ {totalBill}.00</span>
                 </Total>
                 <CheckoutBtn>
-                    <div className="checkout">CheckOut</div>
+                <Link to="/checkout">
+
+                        <div className="checkout">CheckOut</div>
+                </Link>
+                
                 </CheckoutBtn>
             </OrderList>
         
@@ -253,8 +250,8 @@ const Content = styled.div`
 const OrderList = styled.div`
   /* border: 1px dashed black; */
   /* border-left: 1px solid rgba(0,0,0,0.1); */
-  position: relative;
-  left: 276px;
+    position: relative;
+    left: 276px;
     width: 353px;
   /* background-color: rgb(250, 250, 250, 0.3); */
   /* background-color: coral; */
@@ -263,7 +260,7 @@ const OrderList = styled.div`
     /* position: fixed; */
     /* overflow-y: scroll; */
     /* left: 276px; */
-    overflow-y: auto;
+    /* overflow-y: auto; */
     .list {
         margin-top: 40px;
     }
@@ -306,11 +303,13 @@ const Total = styled.div`
 `;
 
 const CheckoutBtn = styled.div`
+    /* text-decoration: none;     */
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     div {
+       
         /* text-align: center; */
         display: flex;
     justify-content: center;
@@ -325,7 +324,17 @@ const CheckoutBtn = styled.div`
     font-size: 18px;
     font-weight: 800;
     cursor: pointer;
+    text-decoration: none !important;
+    :link{
+        text-decoration: none;
+    }
+    :visited{
+        text-decoration: none;
+    }
     /* color: rgba(255, 255 ,255, 0.9); */
+    }
+    .checkout{
+        text-decoration: none !important;
     }
 `;
 

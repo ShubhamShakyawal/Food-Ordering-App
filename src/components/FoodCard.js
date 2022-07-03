@@ -56,6 +56,7 @@ const Card = styled.div`
     display: flex; 
     flex-direction: column;
     justify-content:space-between;
+    
     .header{
         display: flex;
         align-items: center;
