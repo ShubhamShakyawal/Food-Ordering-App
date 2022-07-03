@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import FoodCard from "./FoodCard";
 import Orders from "./Orders";
 import { useDrop } from "react-dnd";
 
-const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQuantity,handleDecreaseQuantity }) => {
+const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQuantity,handleDecreaseQuantity, handleToggleLike }) => {
     // const [myOrders, setMyOrders] = useState();
     const [totalBill, setTotalBill] = useState(0);
     // const [totalItemsLeft, setTotalItemLeft] = useState([]);
-
+    const [category,setCategory] = useState('all');
+    const uniqueCategories = ['all','veg','non-veg'];
     useEffect(() => {
     let i = 0;
     cartItems.forEach((element) => {
@@ -32,17 +33,31 @@ const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQ
         accept: "image",
         drop: (item) => addToCart(item.id),
         collect: (monitor) => ({
-    
-          isOver: !!monitor.isOver(),
+            isOver: !!monitor.isOver(),
         }),
-      }));
+    }));
     
     //   function addImageToBoard(id){
     //     console.log(id);
     //     console.log(typeof(id));
     //   }
     
-
+    function handleChangeCategory(event) {
+        console.log(event.target.value);
+        console.log(typeof(event.target.value));
+        setCategory(event.target.value);
+    }
+    const refSelect = useRef(null);
+    const toggleVisibility = ()=>{
+            const ele = refSelect.current;
+            if(ele.style.visibility === 'visible'){
+                ele.style.visibility = 'hidden';
+            }
+            else{
+                ele.style.visibility = 'visible';
+            }
+    }
+    
     return (
     <Container>
         <Navigation>
@@ -62,24 +77,39 @@ const Menu = ({ totalItems, addToCart, cartItems, removeFromCart,handleIncreaseQ
             <Box>
             <Filter>
                 <div>
-                <span>
+                <span onClick={()=>toggleVisibility()}>
                     <i className="fa-solid fa-filter"></i>
                     Filter
                 </span>
+                <select 
+                    ref={refSelect}
+                    value={category}
+                    onChange={handleChangeCategory} 
+                    >
+                    {uniqueCategories.map(element => (
+                        <option key={element} value={element}>
+                        {element}
+                        </option>
+                    ))}
+                </select>
                 </div>
             </Filter>
             <Content>
                 {totalItems.map((element) => {
-                return (
+                    
+                return ( ( (category === "all")||(element.category === category)) ?
                     <FoodCard
                         key={element.name}
                         name={element.name}
                         price={element.price}
                         rating={element.rating}
                         like={element.like}
-                        category={element.cateogry}
+                        category={element.category}
                         img={element.img}
+                        handleToggleLike={handleToggleLike}
+                        bgColor = {element.color}
                     />
+                    : null
                 );
                 })}
         
@@ -192,6 +222,20 @@ const Filter = styled.div`
             font-size: 15px;
             cursor: pointer;
         }
+        select{
+            border: none;
+            padding: 5px 10px;
+            /* text-align: right; */
+            background-color: rgba(127, 255 ,254 ,0.3);
+            font-family: "Arima", "cursive";
+            font-size: 13px;
+            border-radius: 5px;
+            visibility: hidden;
+            position: relative;
+            left:400px;
+            /* font-weight: 600; */
+        }
+        
     }
     margin: 20px;
 `;

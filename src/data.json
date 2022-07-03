@@ -4,9 +4,10 @@
         "price" : "120",
         "rating" : "4.1",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/cabbage_salad.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#ffe9f7"
     },
     {    
         "id" : "2",  
@@ -14,9 +15,10 @@
         "price" : "120",
         "rating" : "3.9",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/burger_veg.webp",
-        "qty":1
+        "qty":1,
+        "color" : "#fff3ea"
     },
     {   
         "id" : "3",
@@ -24,9 +26,10 @@
         "price" : "150",
         "rating" : "4.4",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/chowmein.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#e8fffe"
     },
     {   
         "id" : "4",
@@ -34,9 +37,10 @@
         "price" : "320",
         "rating" : "4.6",
         "like" : false,
-        "cateogry": "non-veg",
+        "category": "non-veg",
         "img" : "/images/Seafood_soup.webp",
-        "qty":1
+        "qty":1,
+        "color" : "#ffe9f7"
     },
     {   
         "id" : "5",
@@ -44,9 +48,10 @@
         "price" : "290",
         "rating" : "3.2",
         "like" : true,
-        "cateogry": "non-veg",
+        "category": "non-veg",
         "img" : "/images/Chicken_soup.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#e8f7ff"
     },
     {   
         "id" : "6",
@@ -54,9 +59,10 @@
         "price" : "310",
         "rating" : "4.0",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/pizza.webp",
-        "qty":1
+        "qty":1,
+        "color" : "#ecf1ff"
     },
     {   
         "id" : "7",
@@ -64,9 +70,10 @@
         "price" : "200",
         "rating" : "4.5",
         "like" : true,
-        "cateogry": "non-veg",
+        "category": "non-veg",
         "img" : "/images/biryani.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#ffe9ea"
     },
     {   
         "id" : "8",
@@ -74,9 +81,10 @@
         "price" : "170",
         "rating" : "4.9",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/Bean_soup.webp",
-        "qty":1
+        "qty":1,
+        "color" : "#e8f7ff"
     },
     {   
         "id" : "9",
@@ -84,9 +92,10 @@
         "price" : "260",
         "rating" : "3.4",
         "like" : false,
-        "cateogry": "non-veg",
+        "category": "non-veg",
         "img" : "/images/Burger_nonveg.jpg",
-        "qty": 1
+        "qty": 1,
+        "color" : "#fffde9"
     },
     {   
         "id" : "10",
@@ -94,9 +103,10 @@
         "price" : "90",
         "rating" : "4.1",
         "like" : true,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/vegetable_mix.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#ffe9f7"
     },
     {   
         "id" : "11",
@@ -104,9 +114,10 @@
         "price" : "120",
         "rating" : "3.9",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/maggie.png",
-        "qty":1
+        "qty":1,
+        "color" : "#e8f7ff"
     },
     {   
         "id" : "12",
@@ -114,9 +125,10 @@
         "price" : "160",
         "rating" : "4.4",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/Noodle_salad.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#ecf1ff"
     },
     {   
         "id" : "13",
@@ -124,9 +136,10 @@
         "price" : "120",
         "rating" : "4.6",
         "like" : false,
-        "cateogry": "veg",
+        "category": "veg",
         "img" : "/images/donut.jpg",
-        "qty":1
+        "qty":1,
+        "color" : "#fffde9"
     }
 ]
 

@@ -8,7 +8,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
-  const totalItems = require('./data.json');
+  const [totalItems, setTotalItems] = useState(require('./data.json'));
   const [cartItems, setCartItems] = useState([]);
 
   function addToCart(id){
@@ -29,9 +29,15 @@ function App() {
     //   setCartItems(cartItems.map((item)=> item.name === id ? {...productExist, qty: productExist.qty + 1 } : item ));
     // }
     // else{
+
+      const productExist = cartItems.find((item)=> item.name === id)
+      if(productExist){
+        setCartItems(cartItems.map((item)=> item.name === id ? {...productExist, qty: productExist.qty + 1 } : item ));
+      }
+      else{
       const cartList = totalItems.filter((element) => element.name === id);
-    setCartItems((cartItems) => [...cartItems, cartList[0]]);
-    // }
+      setCartItems((cartItems) => [...cartItems, cartList[0]]);
+    }
   }
   function removeFromCart(id){
     setCartItems(cartItems.filter((item)=> item.name !== id));
@@ -54,6 +60,13 @@ function App() {
     console.log(id + "decreamented");
   }
 
+  const handleToggleLike = id =>{
+    const productExist = totalItems.find((item)=> item.name === id)
+    if(productExist){
+      setTotalItems( totalItems.map((item)=> item.name === id ? {...productExist, like: !productExist.like } : item ));
+    }
+}
+
   
   return (
   <DndProvider backend={HTML5Backend}>
@@ -69,6 +82,7 @@ function App() {
                                                         removeFromCart={removeFromCart} 
                                                         handleIncreaseQuantity={handleIncreaseQuantity} 
                                                         handleDecreaseQuantity={handleDecreaseQuantity}
+                                                        handleToggleLike={handleToggleLike}
                                                       />}/>
                 <Route exact path='/checkout' element={<Checkout/>}/>
             </Routes>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import { useDrag } from "react-dnd";
 // name, price, rating, weight, like,
@@ -6,7 +6,7 @@ import { useDrag } from "react-dnd";
 // const color = ['#ffe9f7','#fff3ea','#e8fffe','#e8f7ff','#e8f7ff','#ecf1ff','#ffe9ea','#fffde9'];
 
 const FoodCard = (props) => {
-    const {name,price,rating,like,category,img} = props;
+    const {name,price,rating,like,category,img,handleToggleLike,bgColor} = props;
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "image",
         item: { id: name },
@@ -14,18 +14,20 @@ const FoodCard = (props) => {
             isDragging: !!monitor.isDragging(),
         }),
     }));
-    const [toggleLike, setToggleLike] = useState(like);   //// initial value should be like
-    const handleToggleLike = like =>{
-        if(like === true){
-            return setToggleLike(false);
-        }
-        if(like === false ) setToggleLike(true);
-    }
+    // const [toggleLike, setToggleLike] = useState(like);   //// initial value should be like
+    // const handleToggleLike = like =>{
+    //     if(like === true){
+    //         return setToggleLike(false);
+    //     }
+    //     if(like === false ) setToggleLike(true);
+    // }
     return (
-        <Card ref={drag} style={{ border: isDragging ? "5px solid pink" : "0px" }}>
+        <Card ref={drag} style={{ border: isDragging ? "5px solid pink" : "0px" ,
+                                    backgroundColor : bgColor}}
+                                    >
             <div className='header'>
                 <Rating><i className="fa-solid fa-star"/>{rating}</Rating>
-                <Like><i className="fa-solid fa-heart" style={toggleLike ? {color : "#bf0606"} : {color : "#e6e4e3"}} onClick={()=>{handleToggleLike(toggleLike)}}></i></Like>
+                <Like><i className="fa-solid fa-heart" style={like ? {color : "#bf0606"} : {color : "#e6e4e3"}} onClick={()=>{handleToggleLike(name)}}></i></Like>
             </div>
             <div>
                 <Image><img src={img} alt="" /></Image>
@@ -48,7 +50,7 @@ const Card = styled.div`
     /* box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5); */
     height: 200px;
     width: 200px;
-    background-color: #fffde9;
+    background-color: #ffe9f7;
     border-radius: 10px;
     padding: 5px 5px;
     display: flex; 
